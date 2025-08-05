@@ -6,7 +6,7 @@
 
     Prisma: Use @id directive.
 
-## id Int @id @default(autoincrement())
+ id Int @id @default(autoincrement())
 
 ✅ 2. Foreign Key
 
@@ -16,14 +16,14 @@
 
 Example:
 
-## model Post {
+ model Post {
   id     Int   @id @default(autoincrement())
   title  String
   author User  @relation(fields: [authorId], references: [id])
   authorId Int
 }
 
-## model User {
+ model User {
   id    Int    @id @default(autoincrement())
   name  String
   posts Post[]
@@ -37,7 +37,7 @@ Example:
 
     Prisma: Use @unique directive.
 
-## email String @unique
+ email String @unique
 
 ✅ 4. Composite Primary Key
 
@@ -45,7 +45,7 @@ Example:
 
     Prisma: Use @@id([field1, field2]).
 
-## model Enrollment {
+model Enrollment {
   studentId Int
   courseId  Int
   @@id([studentId, courseId])
@@ -57,7 +57,7 @@ Example:
 
     Prisma: Use @@unique([field1, field2]).
 
-## @@unique([email, name])
+ @@unique([email, name])
 
 ✅ 6. Index Key
 
@@ -65,4 +65,4 @@ Example:
 
     Prisma: Use @@index([field]).
 
-## @@index([email])
+ @@index([email])
